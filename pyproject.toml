@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "get-math-done"
+version = "0.1.0"
+description = "AI copilot for autonomous mathematics research"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    { name = "Jesse Weigel", email = "jesse@jesseweigel.com" },
+]
+keywords = ["mathematics", "ai", "research", "proof-verification", "autonomous"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+    "pydantic>=2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/JesseRWeigel/get-math-done"
+Repository = "https://github.com/JesseRWeigel/get-math-done"
+Issues = "https://github.com/JesseRWeigel/get-math-done/issues"
+
+[project.scripts]
+gmd = "gmd.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gmd"]

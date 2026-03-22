@@ -1,0 +1,15 @@
+{
+  "name": "gmd-state",
+  "description": "Project state queries for Get Math Done",
+  "version": "0.1.0",
+  "transport": "stdio",
+  "module": "gmd.mcp.state_server",
+  "capabilities": [
+    "get_state",
+    "advance_plan",
+    "run_health_check",
+    "get_phase_status",
+    "get_current_position"
+  ],
+  "health_check": "gmd.mcp.state_server:health_check"
+}

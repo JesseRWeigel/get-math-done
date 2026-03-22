@@ -1,0 +1,26 @@
+{
+  "name": "gmd-conventions",
+  "description": "Mathematical notation convention lock management",
+  "version": "0.1.0",
+  "transport": "stdio",
+  "module": "gmd.mcp.conventions_server",
+  "capabilities": [
+    "convention_set",
+    "convention_check",
+    "convention_diff",
+    "convention_list",
+    "convention_describe"
+  ],
+  "fields": [
+    "index_convention",
+    "coordinate_system",
+    "algebra_convention",
+    "function_space_notation",
+    "set_notation",
+    "proof_style",
+    "numbering_scheme",
+    "symbol_assignments",
+    "category_convention",
+    "metric_norm_convention"
+  ]
+}
