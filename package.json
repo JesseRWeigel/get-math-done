@@ -1,0 +1,25 @@
+{
+  "name": "get-math-done",
+  "version": "0.1.0",
+  "description": "AI copilot for autonomous mathematics research — from conjecture to proof to publication",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JesseRWeigel/get-math-done"
+  },
+  "bin": {
+    "get-math-done": "bin/install.js"
+  },
+  "files": [
+    "bin/"
+  ],
+  "keywords": [
+    "mathematics",
+    "ai",
+    "research",
+    "proof-verification",
+    "autonomous",
+    "claude-code",
+    "mcp"
+  ]
+}
