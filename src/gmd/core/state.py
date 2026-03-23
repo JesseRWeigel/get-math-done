@@ -135,6 +135,23 @@ class StateEngine:
         json_path = self.layout.state_json
         if json_path.exists():
             data = json.loads(json_path.read_text())
+            # Handle phases stored as list (from earlier runs) — convert to dict
+            if isinstance(data.get("phases"), list):
+                phases_dict = {}
+                for p in data["phases"]:
+                    pid = str(p.get("id", ""))
+                    phases_dict[pid] = {
+                        "id": pid,
+                        "title": p.get("name", p.get("title", "")),
+                        "status": "completed" if p.get("status") == "complete" else p.get("status", "pending"),
+                        "current_plan": p.get("current_plan"),
+                        "plans_completed": p.get("plans_completed", []),
+                        "plans_total": p.get("plans_total", 0),
+                        "started_at": p.get("started_at"),
+                        "completed_at": p.get("completed_at"),
+                        "verification_status": p.get("verification_status"),
+                    }
+                data["phases"] = phases_dict
             return ProjectState(**data)
         # Fall back to empty state
         return ProjectState()
